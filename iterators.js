@@ -5,9 +5,8 @@
  * - Logs every element of the array with "eng" next to it
  * eg: engineer(["zainab","omar","zahraa"]) => eng.zainab, eng.omar, eng.zahraa
  ************************************/
-const engineer = (array) => {
-  // input code here
-};
+const engineer = (array) => console.log(array.map(element => "eng."+element));
+engineer (["zainab", "hamed"])
 
 /*************************************
  * Challenge 2: toKWD(wallets)
@@ -21,7 +20,8 @@ const engineer = (array) => {
  * The conversion is:
  *   kwd = usd * 0.30
  ************************************/
-
+const toKWD = (array) => array.map(element => element * 0.30);
+console.log(toKWD([10, 20]))
 /**************************************
  * Challenge 3: richestWallet(wallets,maxAmount)
  *
@@ -31,6 +31,9 @@ const engineer = (array) => {
  * - Returns an array of wallets
  *   that exceed the maxAmount
  ***************************************/
+const richestWallet = (array, maxAmount) => array.filter(Amount => Amount > maxAmount)
+
+console.log(richestWallet([20, 30, 40, 50], 35))
 
 /******************************************
  * Challenge 4: makeLiteralGrades(grades)
@@ -46,3 +49,10 @@ const engineer = (array) => {
  * < 60   : F
  * Example: makeLiteralGrades([90, 70, 40]) should return ["A", "C", "F"]
  *******************************************/
+const makeLiteralGrades = (array) => array.map(Element => 
+(Element >= 90) ? "A": 
+(Element >=80) ? "B" : 
+(Element >=70) ? "C" :
+(Element >=60) ? "D" : 
+"F")
+console.log(makeLiteralGrades([50, 60, 70, 80, 90, 100]))
